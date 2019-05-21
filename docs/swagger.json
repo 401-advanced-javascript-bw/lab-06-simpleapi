@@ -1,52 +1,326 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Core API",
-    "description": "The worlds funnest little API",
-    "version": "1.0.0"
+    "title": "Simple API",
+    "description": "api on store products",
+    "version": "0.1"
   },
   "servers": [
     {
-      "url": "http://localhost:8080/"
+      "url": "http://localhost:3000"
     }
   ],
   "paths": {
-    "/categories": {
-      "get": {
-        "description": "Get all categories",
+    "/categories/3/": {
+      "delete": {
+        "description": "Deletes category with specified id",
         "responses": {
           "200": {
-            "description": "Returned a list of categories",
+            "description": "Item successfully deleted",
             "content": {
-              "*/*": {
+              "application/json; charset=utf-8": {
                 "schema": {
-                  "$ref": "#/components/schemas/getAll"
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "http://localhost:3000"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "http://localhost:3000"
+        }
+      ]
+    },
+    "/products/5": {
+      "put": {
+        "description": "Updates product at specified id",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/body"
+              },
+              "examples": {
+                "0": {
+                  "value": "{\"category\": \"Kitchen\",\n    \"name\": \"Pretty Pot<3\",\n    \"display_name\": \"pot\"\n}"
                 }
               }
             }
           }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully updated product",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "http://localhost:3000"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "http://localhost:3000"
         }
-      },
-      "post": {
-      }
+      ]
     },
-    "/categories/{id}": {
-      "get": {
-      },
+    "/categories/3": {
       "put": {
+        "description": "Updates category at specified id",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/body_1"
+              },
+              "examples": {
+                "0": {
+                  "value": "{\"name\": \"Kitchen\",\n    \"display_name\": \"kitchen\",\n    \"description\": \"Things you find in your kitchen!!\"\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "successfully updated product at id",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "http://localhost:3000"
+          }
+        ]
       },
+      "servers": [
+        {
+          "url": "http://localhost:3000"
+        }
+      ]
+    },
+    "/products/5/": {
       "delete": {
-      }
+        "description": "Deletes product at specified id",
+        "responses": {
+          "200": {
+            "description": "Successfully deleted product at id",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "http://localhost:3000"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "http://localhost:3000"
+        }
+      ]
+    },
+    "/products/": {
+      "post": {
+        "description": "Add product to api",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/body_2"
+              },
+              "examples": {
+                "0": {
+                  "value": "{\"category\": \"Kitchen\",\n    \"name\": \"Pretty Pot\",\n    \"display_name\": \"pot\"\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "successfully added product",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "http://localhost:3000"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "http://localhost:3000"
+        }
+      ]
+    },
+    "/categories/": {
+      "post": {
+        "description": "add category to api",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/body_3"
+              },
+              "examples": {
+                "0": {
+                  "value": "{\"name\": \"Kitchen\",\n    \"display_name\": \"kitchen\",\n    \"description\": \"Things you find in your kitchen\"\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "successfully added category",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "http://localhost:3000"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "http://localhost:3000"
+        }
+      ]
+    },
+    "/products": {
+      "get": {
+        "description": "retrieve products from API",
+        "responses": {
+          "200": {
+            "description": "successfully retrieved products",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "http://localhost:3000"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "http://localhost:3000"
+        }
+      ]
     }
   },
   "components": {
     "schemas": {
-      "getAll": {
+      "body": {
         "type": "object",
-        "example": [
-          "{}",
-          "{}"
-        ]
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          }
+        }
+      },
+      "body_1": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          }
+        }
+      },
+      "body_2": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          }
+        }
+      },
+      "body_3": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          }
+        }
       }
     }
   }
