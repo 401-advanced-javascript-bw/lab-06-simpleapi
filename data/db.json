@@ -1,0 +1,36 @@
+{
+  "categories": [
+    {
+      "name": "Apparel",
+      "display_name": "apparel",
+      "description": "Things you put on yourself",
+      "id": 1
+    },
+    {
+      "name": "Food",
+      "display_name": "food",
+      "description": "yummy in your tummy",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "category": "Apparel",
+      "name": "fluffiest yellow sweater",
+      "display_name": "sweater",
+      "id": 1
+    },
+    {
+      "name": "Goldilocks",
+      "display_name": "Goldilocks",
+      "description": "not furry but a nice fish and great companion",
+      "id": 3
+    },
+    {
+      "name": "Kitchen",
+      "display_name": "kitchen",
+      "description": "Things you find in your kitchen",
+      "id": 4
+    }
+  ]
+}
