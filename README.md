@@ -6,7 +6,7 @@
 
 ### Links and Resources
 
-- [submission PR](http://xyz.com)
+- [submission PR](https://github.com/401-advanced-javascript-bw/lab-06-simpleapi/pull/1)
 - [front-end](https://v8k9f.codesandbox.io/)
 
 #### Documentation
